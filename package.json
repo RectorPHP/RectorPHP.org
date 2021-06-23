@@ -1,30 +1,32 @@
 {
     "name": "getrector-org",
     "dependencies": {
-        "ajv": "^6.10.1",
-        "bootstrap": "^4.3.1",
-        "jquery": "^3.4.1",
-        "typed.js": "^2.0.11",
-        "@fortawesome/fontawesome-free": "^5.9.0",
-        "@fortawesome/free-brands-svg-icons": "^5.9.0",
-        "@fortawesome/free-regular-svg-icons": "^5.9.0",
-        "@fortawesome/free-solid-svg-icons": "^5.9.0"
+        "@fortawesome/fontawesome-free": "^5.15.3",
+        "@fortawesome/free-brands-svg-icons": "^5.15.3",
+        "@fortawesome/free-regular-svg-icons": "^5.15.3",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "ajv": "^8.5",
+        "bootstrap": "^5.0",
+        "jquery": "^3.6",
+        "typed.js": "^2.0.12"
     },
     "devDependencies": {
-        "@symfony/webpack-encore": "^1.0",
+        "cypress": "^7.4",
+        "@symfony/webpack-encore": "^1.4",
         "bootstrap-sass": "^3.4.1",
-        "bootswatch": "^3.4.1",
-        "imports-loader": "^2.0",
-        "node-sass": "^5.0",
-        "sass-loader": "^11.0"
+        "bootswatch": "^5.0",
+        "imports-loader": "^3.0",
+        "node-sass": "^6.0",
+        "sass-loader": "^12.0"
     },
     "scripts": {
         "dev-server": "encore dev-server",
         "dev": "encore dev --progress",
         "watch": "encore dev --watch",
-        "build": "encore production --progress"
+        "build": "encore production --progress",
+        "cypress:install": "cypress install",
+        "cypress:open": "cypress open"
     },
-    "license": "UNLICENSED",
     "private": true,
     "repository": {
         "type": "website",

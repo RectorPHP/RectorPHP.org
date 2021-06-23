@@ -1,12 +1,10 @@
-name: Unit Tests
+name: Cypress Tests
 
 on:
-    push: null
     pull_request: null
 
-
 jobs:
-    unit_tests:
+    cypress_tests:
         runs-on: ubuntu-latest
         steps:
             -   uses: actions/checkout@v2
@@ -18,7 +16,10 @@ jobs:
 
             -   run: composer install --no-progress --ansi
 
-            # for controller tests
-            -   run: npm install
-            -   run: npm run dev
-            -   run: vendor/bin/phpunit
+            -   run: yarn install
+
+            # run local server in the background
+            -   run: php -S localhost:8080 -t public > phpd.log 2>&1 &
+
+            -   run: yarn run cypress:install --force
+            -   run: yarn run cypress:open
